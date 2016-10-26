@@ -888,4 +888,29 @@ LASreader::LASreader(bool bForRegister)
 {
 	gps_time = 0.0;
 	rgb[0] = rgb[1] = rgb[2] = 0;
-	poin
+	points_have_gps_time = false;
+	points_have_rgb = false;
+	npoints = -1;
+	p_count = -1;
+	additional_bytes_per_point = 0;
+	m_file = 0;
+	pointReader = 0;
+
+	m_ptContent = ORS_PCM_XYZ;
+//	m_attFlag = PA_ELEVATION;
+}
+
+LASreader::~LASreader()
+{
+	close();
+}
+
+// void* LASreader::get_header()
+// {
+// 	return &header;
+// }
+
+// void LASreader::set_attribution_flag(orsPointAttributionFlag flag)
+// {
+// 	m_attFlag = flag;
+//}

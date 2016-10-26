@@ -153,3 +153,19 @@ private:
 //	void get_return_number(unsigned char* rtnum);
 	
 	
+
+//	void get_rgb(unsigned short Rgb[3]);
+		
+private:
+
+	void *m_file;
+
+	LASpointReader* pointReader;
+
+	ors_uint32	m_ptContent;
+
+public:
+	ORS_OBJECT_IMP1( LASreader, orsIPointCloudReader, "las", "las" );
+};
+
+#endif
